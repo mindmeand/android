@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d49e130-06a7-4ad8-8e50-d92dd8a31e75" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserHistoryList.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserMyInfoList.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserRes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
