@@ -36,7 +36,7 @@
             app:srcCompat="@drawable/title" />
 
         <EditText
-            android:id="@+id/editPhone3"
+            android:id="@+id/editName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -51,7 +51,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/editPhone4"
+            android:id="@+id/editPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -66,7 +66,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnResiter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
