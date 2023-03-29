@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +18,8 @@ import com.hyunsungkr.mindmeand.api.UserApi;
 import com.hyunsungkr.mindmeand.config.Config;
 import com.hyunsungkr.mindmeand.model.User;
 import com.hyunsungkr.mindmeand.model.UserRes;
+
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,6 +76,18 @@ public class RegisterActivity extends AppCompatActivity {
                 password = editPassword.getText().toString().trim();
                 passwordCk = editPasswordCk.getText().toString().trim();
                 birthday = editBirthday.getText().toString().trim();
+
+                Pattern pattern = Patterns.EMAIL_ADDRESS;
+                if (pattern.matcher(name).matches() == false) {
+                    Toast.makeText(RegisterActivity.this, "이메일 형식이 올바르지 않습니다", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                if (password.length() < 5 || password.length() > 20) {
+                    Toast.makeText(RegisterActivity.this, "비밀번호 길이를 확인하세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if(password != passwordCk){
 

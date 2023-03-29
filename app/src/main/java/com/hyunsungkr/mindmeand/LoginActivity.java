@@ -68,17 +68,6 @@ public class LoginActivity extends AppCompatActivity {
                 name = editName.getText().toString().trim();
                 password = editPassword.getText().toString().trim();
 
-                Pattern pattern = Patterns.EMAIL_ADDRESS;
-                if (pattern.matcher(name).matches() == false) {
-                    Toast.makeText(LoginActivity.this, "이메일 형식이 올바르지 않습니다", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-                if (password.length() < 5 || password.length() > 20) {
-                    Toast.makeText(LoginActivity.this, "비밀번호 길이를 확인하세요", Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 Retrofit retrofit = NetworkClient.getRetrofitClient(LoginActivity.this);
                 UserApi api = retrofit.create(UserApi.class);
 

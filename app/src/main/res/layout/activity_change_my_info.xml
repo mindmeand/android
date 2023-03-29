@@ -78,7 +78,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/editPhone"
+            android:id="@+id/editBirthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -104,7 +104,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/editPhone2"
+            android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -118,7 +118,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

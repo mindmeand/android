@@ -6,10 +6,14 @@ public class User implements Serializable {
 
     private String name;
     private String password;
+    private String birthDate;
+    private String email;
 
 
 
-    public User(){};
+    public User(){}
+
+
     public User(String name, String birthday, String email, String password) {
         this.name = name;
         this.birthDate = birthday;
@@ -20,6 +24,12 @@ public class User implements Serializable {
     public User(String name, String password) {
         this.name = name;
         this.password = password;
+    }
+
+    public User(String name, String birthday, String email) {
+        this.name = name;
+        this.birthDate = birthday;
+        this.email = email;
     }
 
     public String getPassword() {
@@ -54,7 +64,6 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    private String birthDate;
-    private String email;
+
 
 }
