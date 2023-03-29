@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d49e130-06a7-4ad8-8e50-d92dd8a31e75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/Res.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/ChangeMyInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/ChangeMyInfoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/RegisterActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_my_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_change_my_info.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
