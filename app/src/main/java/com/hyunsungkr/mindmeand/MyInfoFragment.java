@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +57,22 @@ public class MyInfoFragment extends Fragment {
         }
     }
 
+    TextView txtName;
+    TextView txtBirthDate;
+    TextView txtEmail;
+    LinearLayout linearUpdate;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_info, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_my_info, container, false);
+        txtName = rootView.findViewById(R.id.txtName);
+        txtBirthDate = rootView.findViewById(R.id.txtBirthDate);
+        txtEmail = rootView.findViewById(R.id.txtEmail);
+        linearUpdate = rootView.findViewById(R.id.linearUpdate);
+
+
+
+        return rootView;
     }
 }
