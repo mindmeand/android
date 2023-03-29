@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.hyunsungkr.mindmeand.api.ConsultationApi;
 import com.hyunsungkr.mindmeand.api.NetworkClient;
 import com.hyunsungkr.mindmeand.api.UserApi;
@@ -28,7 +29,10 @@ import com.hyunsungkr.mindmeand.config.Config;
 import com.hyunsungkr.mindmeand.model.Consultation;
 import com.hyunsungkr.mindmeand.model.Res;
 import com.hyunsungkr.mindmeand.model.User;
+import com.hyunsungkr.mindmeand.model.UserMyInfoList;
 import com.hyunsungkr.mindmeand.model.UserRes;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -95,6 +99,7 @@ public class HomeFragment extends Fragment {
     ImageView imgPerson;
     TextView txtExplanation;
     TextView txtCounselorName;
+    ArrayList<User> userArrayList = new ArrayList<>();
 
 
     @Override
@@ -160,7 +165,27 @@ public class HomeFragment extends Fragment {
     private void getUserInfo() {
         Retrofit retrofit = NetworkClient.getRetrofitClient(getContext());
         UserApi api = retrofit.create(UserApi.class);
-        // todo 현성님 마이페이지 다 하면 사용한 api 가져오기
+
+        Call<UserMyInfoList> call = api.userInfo(accessToken);
+        call.enqueue(new Callback<UserMyInfoList>() {
+            @Override
+            public void onResponse(Call<UserMyInfoList> call, Response<UserMyInfoList> response) {
+
+                if (response.isSuccessful()) {
+                    // 완료시 실행할 코드
+                    UserMyInfoList userMyInfoList = response.body();
+                    userArrayList.addAll(userMyInfoList.getUser());
+                    User user = userArrayList.get(0);
+                    txtName.setText(user.getName());
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserMyInfoList> call, Throwable t) {
+            }
+
+        });
 
     }
 
@@ -169,10 +194,20 @@ public class HomeFragment extends Fragment {
         mainLayout.setVisibility(View.GONE);
 
         // 상담가 프로필 셋팅
-//        Glide.with(HotelInfoActivity.this).load(hotel.getImgUrl()).into(imgHotel);
-//        imgPerson
-//        txtExplanation;
-//        txtCounselorName;
+        // todo 이미지 셋팅
+        if (intSelect == 0) {
+            Glide.with(getActivity()).load(R.drawable.p0).into(imgPerson);
+            txtExplanation.setText("유능하고 친절한 상담가");
+            txtCounselorName.setText("왕현성");
+        } else if (intSelect == 1) {
+            Glide.with(getActivity()).load(R.drawable.p0).into(imgPerson);
+            txtExplanation.setText("객관적이고 냉철한 상담가");
+            txtCounselorName.setText("백민우");
+        } else if (intSelect == 2) {
+            Glide.with(getActivity()).load(R.drawable.p0).into(imgPerson);
+            txtExplanation.setText("편안한 친구같은 상담가");
+            txtCounselorName.setText("윤지수");
+        }
 
         loadingLayout.setVisibility(View.VISIBLE);
 
@@ -188,6 +223,8 @@ public class HomeFragment extends Fragment {
 
                 if (response.isSuccessful()) {
                     // 완료시 실행할 코드
+                    Intent intent = new Intent(getActivity(), ResultActivity.class);
+                    startActivity(intent);
                 }
             }
 
