@@ -10,17 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d49e130-06a7-4ad8-8e50-d92dd8a31e75" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/NetworkClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/UserApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/RegisterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +57,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
     "last_directory_selection": "C:/Users/-/Documents/github/android/app/src/main/java",
-    "last_opened_file_path": "C:/Users/-/Documents/github/android/app/src/main/res/xml"
+    "last_opened_file_path": "C:/Users/-/Documents/github/pethotel-client-android"
   }
 }]]></component>
   <component name="RecentsManager">
