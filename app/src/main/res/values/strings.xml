@@ -2,4 +2,12 @@
     <string name="app_name">Mindmeand</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="cancel_reasons">
+        <item>상담가 선택</item>
+        <item>유능하고 친절한 상담가 왕현성</item>
+        <item>객관적이고 냉철한 상담가 백민우</item>
+        <item>편안한 친구같은 상담가 윤지수</item>
+    </string-array>
+
 </resources>
