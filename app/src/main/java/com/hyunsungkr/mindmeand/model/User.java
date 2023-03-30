@@ -9,8 +9,6 @@ public class User implements Serializable {
     private String birthDate;
     private String email;
 
-
-
     public User(){}
 
 
@@ -63,7 +61,5 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
 
 }

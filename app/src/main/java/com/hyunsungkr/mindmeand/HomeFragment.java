@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
     ImageView imgPerson;
     TextView txtExplanation;
     TextView txtCounselorName;
-    ArrayList<User> userArrayList = new ArrayList<>();
+    String name;
 
 
     @Override
@@ -174,9 +174,9 @@ public class HomeFragment extends Fragment {
                 if (response.isSuccessful()) {
                     // 완료시 실행할 코드
                     UserMyInfoList userMyInfoList = response.body();
-                    userArrayList.addAll(userMyInfoList.getUser());
-                    User user = userArrayList.get(0);
-                    txtName.setText(user.getName());
+                    User user = userMyInfoList.getUser();
+                    name = user.getName();
+                    txtName.setText(name);
 
                 }
             }
@@ -214,22 +214,34 @@ public class HomeFragment extends Fragment {
         Retrofit retrofit = NetworkClient.getRetrofitClient(getContext());
         ConsultationApi api = retrofit.create(ConsultationApi.class);
 
-        Consultation consultation = new Consultation(intSelect, counsel);
+        Consultation setConsultation = new Consultation(intSelect, counsel);
 
-        Call<Res> call = api.consultation(accessToken, consultation);
-        call.enqueue(new Callback<Res>() {
+        Call<Consultation> call = api.consultation(accessToken, setConsultation);
+        call.enqueue(new Callback<Consultation>() {
             @Override
-            public void onResponse(Call<Res> call, Response<Res> response) {
+            public void onResponse(Call<Consultation> call, Response<Consultation> response) {
 
                 if (response.isSuccessful()) {
+                    Consultation consultation = response.body();
                     // 완료시 실행할 코드
                     Intent intent = new Intent(getActivity(), ResultActivity.class);
+                    intent.putExtra("consultation", consultation);
+                    intent.putExtra("name", name);
                     startActivity(intent);
+
+                    ArrayAdapter yearAdapter = ArrayAdapter.createFromResource(getContext(),
+                            R.array.cancel_reasons, android.R.layout.simple_spinner_item);
+                    spinner.setAdapter(yearAdapter);
+                    editCounsel.setText("");
+                    loadingLayout.setVisibility(View.GONE);
+                    mainLayout.setVisibility(View.VISIBLE);
+
+
                 }
             }
 
             @Override
-            public void onFailure(Call<Res> call, Throwable t) {
+            public void onFailure(Call<Consultation> call, Throwable t) {
             }
 
         });

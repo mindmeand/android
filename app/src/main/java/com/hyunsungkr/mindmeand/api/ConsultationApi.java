@@ -12,7 +12,7 @@ public interface ConsultationApi {
 
     // 상담하기
     @POST("/consultation")
-    Call<Res> consultation(@Header("Authorization") String token,
+    Call<Consultation> consultation(@Header("Authorization") String token,
                            @Body Consultation consultation);
 
 }

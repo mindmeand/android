@@ -6,7 +6,7 @@ import java.util.List;
 public class UserMyInfoList implements Serializable {
 
     private String result;
-    private List<User> user;
+    private User user;
 
     public String getResult() {
         return result;
@@ -16,11 +16,11 @@ public class UserMyInfoList implements Serializable {
         this.result = result;
     }
 
-    public List<User> getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(List<User> user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }

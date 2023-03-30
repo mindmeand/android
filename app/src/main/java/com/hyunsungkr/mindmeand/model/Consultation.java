@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Consultation implements Serializable {
     private int type;
     private String question;
+    private String answer;
 
     public Consultation() {
     }
@@ -12,6 +13,12 @@ public class Consultation implements Serializable {
     public Consultation(int type, String question) {
         this.type = type;
         this.question = question;
+    }
+
+    public Consultation(int type, String question, String answer) {
+        this.type = type;
+        this.question = question;
+        this.answer = answer;
     }
 
     public int getType() {
@@ -28,5 +35,13 @@ public class Consultation implements Serializable {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }
