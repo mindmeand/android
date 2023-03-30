@@ -7,6 +7,21 @@ public class UserMyInfoList implements Serializable {
 
     private String result;
     private User user;
+    private int count;
+
+    public UserMyInfoList(int count) {
+        this.count = count;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+
 
     public String getResult() {
         return result;

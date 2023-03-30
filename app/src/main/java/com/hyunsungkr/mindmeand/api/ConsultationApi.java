@@ -7,9 +7,11 @@ import com.hyunsungkr.mindmeand.model.UserHistoryList;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ConsultationApi {
 
@@ -21,5 +23,10 @@ public interface ConsultationApi {
     // 내 상담내역 가져오기.
     @GET("/consultation/my")
     Call<UserHistoryList> getMyConsultation(@Header("Authorization") String token);
+
+    // 상담내역 삭제
+    @DELETE("/consultation/{consultationId}")
+    Call<Res> deleteConsultation(@Header("Authorization") String token,
+                                 @Path("consultationId") int consultationId);
 
 }

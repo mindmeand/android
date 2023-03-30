@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,7 @@ import com.hyunsungkr.mindmeand.api.NetworkClient;
 import com.hyunsungkr.mindmeand.api.UserApi;
 import com.hyunsungkr.mindmeand.config.Config;
 import com.hyunsungkr.mindmeand.model.Consultation;
+import com.hyunsungkr.mindmeand.model.Res;
 import com.hyunsungkr.mindmeand.model.User;
 import com.hyunsungkr.mindmeand.model.UserHistory;
 import com.hyunsungkr.mindmeand.model.UserHistoryList;
@@ -80,11 +82,18 @@ public class MyInfoFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    private boolean isLoading = false;
     TextView txtName;
     TextView txtBirthDate;
     TextView txtEmail;
     LinearLayout linearUpdate;
+
+    // 페이징 처리를 위한 변수
+    int count = 0;
+    int offset = 0;
+    int limit = 5;
+
+    private int visibleThreshold = 5; // default value
 
     ArrayList<User> mypageList = new ArrayList<>();
 
@@ -108,6 +117,10 @@ public class MyInfoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
+
+
+
         linearUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,7 +142,12 @@ public class MyInfoFragment extends Fragment {
     }
 
 
+
+
     void getNetworkData(){
+
+
+
         Retrofit retrofit = NetworkClient.getRetrofitClient(getActivity());
         UserApi api = retrofit.create(UserApi.class);
 
@@ -142,13 +160,21 @@ public class MyInfoFragment extends Fragment {
             @Override
             public void onResponse(Call<UserMyInfoList> call, Response<UserMyInfoList> response) {
                 if(response.isSuccessful()){
-                    if(response.isSuccessful()){
-                        mypageList.clear();
-                        mypageList.addAll(response.body().getUser());
-                        txtBirthDate.setText(mypageList.get(0).getBirthDate());
-                        txtEmail.setText(mypageList.get(0).getEmail());
-                        txtName.setText(mypageList.get(0).getName());
-                    }
+
+
+
+                    // add the retrieved items to the list
+                    mypageList.add(response.body().getUser());
+
+
+                    txtBirthDate.setText(mypageList.get(0).getBirthDate());
+                    txtEmail.setText(mypageList.get(0).getEmail());
+                    txtName.setText(mypageList.get(0).getName());
+
+
+
+
+
                 }
             }
 
@@ -215,6 +241,31 @@ public class MyInfoFragment extends Fragment {
     public void deleteProcess(int index){
         selectedConsultation = consultationList.get(index);
         Retrofit retrofit = NetworkClient.getRetrofitClient(getActivity());
+        ConsultationApi api = retrofit.create(ConsultationApi.class);
+
+        // 헤더에 들어갈 억세스토큰 가져오기
+        SharedPreferences sp = getActivity().getSharedPreferences(Config.PREFERENCE_NAME, MODE_PRIVATE);
+        String accessToken = "Bearer " + sp.getString(Config.ACCESS_TOKEN, "");
+
+        Call<Res> call = api.deleteConsultation(accessToken,selectedConsultation.getId());
+
+        call.enqueue(new Callback<Res>() {
+            @Override
+            public void onResponse(Call<Res> call, Response<Res> response) {
+                if(response.isSuccessful()){
+                    consultationList.remove(selectedConsultation);
+                    adapter.notifyDataSetChanged();
+                }else{
+                    return;
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Res> call, Throwable t) {
+
+            }
+        });
+
 
 
     }
