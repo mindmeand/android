@@ -19,8 +19,10 @@ import com.hyunsungkr.mindmeand.api.UserApi;
 import com.hyunsungkr.mindmeand.config.Config;
 import com.hyunsungkr.mindmeand.model.Res;
 import com.hyunsungkr.mindmeand.model.User;
+import com.hyunsungkr.mindmeand.model.UserMyInfoList;
 import com.hyunsungkr.mindmeand.model.UserRes;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 import retrofit2.Call;
@@ -41,6 +43,7 @@ public class ChangeMyInfoActivity extends AppCompatActivity {
     String email;
     String birthday;
     String name;
+    ArrayList<User> mypageList = new ArrayList<>();
 
 
     @SuppressLint("MissingInflatedId")
@@ -77,7 +80,7 @@ public class ChangeMyInfoActivity extends AppCompatActivity {
                 birthday = editBirthday.getText().toString().trim();
 
                 Pattern pattern = Patterns.EMAIL_ADDRESS;
-                if (pattern.matcher(name).matches() == false) {
+                if (pattern.matcher(email).matches() == false) {
                     Toast.makeText(ChangeMyInfoActivity.this, "이메일 형식이 올바르지 않습니다", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -115,6 +118,45 @@ public class ChangeMyInfoActivity extends AppCompatActivity {
             }
         });
 
-
+        getNetworkData();
     }
+    void getNetworkData(){
+
+
+
+        Retrofit retrofit = NetworkClient.getRetrofitClient(ChangeMyInfoActivity.this);
+        UserApi api = retrofit.create(UserApi.class);
+
+        // 헤더에 들어갈 억세스토큰 가져오기
+
+        Call<UserMyInfoList> call = api.getMyinfo(accessToken);
+        call.enqueue(new Callback<UserMyInfoList>() {
+            @Override
+            public void onResponse(Call<UserMyInfoList> call, Response<UserMyInfoList> response) {
+                if(response.isSuccessful()){
+
+
+
+                    // add the retrieved items to the list
+                    mypageList.add(response.body().getUser());
+
+
+                    editBirthday.setText(mypageList.get(0).getBirthDate());
+                    editEmail.setText(mypageList.get(0).getEmail());
+                    editName.setText(mypageList.get(0).getName());
+
+
+
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserMyInfoList> call, Throwable t) {
+
+            }
+        });
+    }
+
 }
