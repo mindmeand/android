@@ -2,6 +2,7 @@ package com.hyunsungkr.mindmeand.api;
 
 import com.hyunsungkr.mindmeand.model.Res;
 import com.hyunsungkr.mindmeand.model.User;
+import com.hyunsungkr.mindmeand.model.UserMyInfoList;
 import com.hyunsungkr.mindmeand.model.UserRes;
 
 import retrofit2.Call;
@@ -28,7 +29,7 @@ public interface UserApi {
 
     // 내 정보 조회
     @GET("/user/info")
-    Call<User> getMyinfo(@Header("Authorization") String token);
+    Call<UserMyInfoList> getMyinfo(@Header("Authorization") String token);
 
 
 }
