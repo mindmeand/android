@@ -200,11 +200,11 @@ public class HomeFragment extends Fragment {
             txtExplanation.setText("유능하고 친절한 상담가");
             txtCounselorName.setText("왕현성");
         } else if (intSelect == 1) {
-            Glide.with(getActivity()).load(R.drawable.p0).into(imgPerson);
+            Glide.with(getActivity()).load(R.drawable.p1).into(imgPerson);
             txtExplanation.setText("객관적이고 냉철한 상담가");
             txtCounselorName.setText("백민우");
         } else if (intSelect == 2) {
-            Glide.with(getActivity()).load(R.drawable.p0).into(imgPerson);
+            Glide.with(getActivity()).load(R.drawable.p2).into(imgPerson);
             txtExplanation.setText("편안한 친구같은 상담가");
             txtCounselorName.setText("윤지수");
         }
