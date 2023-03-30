@@ -9,23 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d49e130-06a7-4ad8-8e50-d92dd8a31e75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/HomeFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/HomeFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/ResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/ResultActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/ConsultationApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/api/ConsultationApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/Consultation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserMyInfoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/hyunsungkr/mindmeand/model/UserMyInfoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_result.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3d49e130-06a7-4ad8-8e50-d92dd8a31e75" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\5-13\.android\avd\Pixel_2_API_30_8.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\-\.android\avd\Pixel_2_API_33.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -65,14 +55,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/5-13/Documents/GitHub/android/app/src/main/res/drawable&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/5-13/Documents/GitHub/android/app/src/main/res/drawable&quot;
+    &quot;last_directory_selection&quot;: &quot;C:/Users/-/Documents/github/android/app/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/-/Documents/github/pethotel-client-android&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\5-13\Documents\GitHub\android\app\src\main\res\drawable" />
       <recent name="C:\Users\-\Documents\github\android\app\src\main\res\xml" />
+      <recent name="C:\Users\5-13\Documents\GitHub\android\app\src\main\res\drawable" />
     </key>
     <key name="android.template.2011357751">
       <recent name="com.hyunsungkr.mindmeand" />
