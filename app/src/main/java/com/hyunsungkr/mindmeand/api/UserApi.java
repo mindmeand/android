@@ -27,9 +27,15 @@ public interface UserApi {
     @PUT("/user/info")
     Call<Res> infoChange(@Header("Authorization") String token, @Body User user);
 
+
     // 정보조회
     @GET("/user/info")
     Call<UserMyInfoList> userInfo(@Header("Authorization") String token);
+
+    // 내 정보 조회
+    @GET("/user/info")
+    Call<UserMyInfoList> getMyinfo(@Header("Authorization") String token);
+
 
 
 }
