@@ -27,10 +27,19 @@
 </div>
 
 　
-## 📌 사용한 기술
-Chat GPT Open API
+## 📌 Screen Shot
+
 
 <img width="50%" height="45%" src="https://user-images.githubusercontent.com/120348555/229407049-c686f78f-8aa0-48a6-9f1a-7b2fbe7fbbed.JPG">
+
+## 📌 기술 스택(Tech Skill)
+    
+ | Category                                                   | Stack                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------- |
+| **Architecture**| MVC        |
+| **Android Jetpack**|  ViewModel, LiveData, Navigation, RecyclerView, Fragment  |
+| **Networking** | Retrofit2, OkHttp3           |
+
 
 ## 📌Code block
 ```java
