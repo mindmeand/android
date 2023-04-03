@@ -12,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ConsultationApi {
 
@@ -22,7 +23,8 @@ public interface ConsultationApi {
 
     // 내 상담내역 가져오기.
     @GET("/consultation/my")
-    Call<UserHistoryList> getMyConsultation(@Header("Authorization") String token);
+    Call<UserHistoryList> getMyConsultation(@Header("Authorization") String token,@Query("offset") int offset,
+                                            @Query("limit") int limit);
 
     // 상담내역 삭제
     @DELETE("/consultation/{consultationId}")

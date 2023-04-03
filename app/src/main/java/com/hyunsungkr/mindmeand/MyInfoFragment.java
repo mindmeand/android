@@ -117,6 +117,23 @@ public class MyInfoFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                int lastPosition = ((LinearLayoutManager)recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
+                int totalCount = recyclerView.getAdapter().getItemCount();
+
+                if(lastPosition + 1 == totalCount){
+                    offset=offset+5;
+                    getConsultationData();
+
+                }
+
+            }
+        });
+
 
 
 
@@ -187,6 +204,7 @@ public class MyInfoFragment extends Fragment {
 
     void getConsultationData(){
 
+
         Retrofit retrofit = NetworkClient.getRetrofitClient(getActivity());
         ConsultationApi api = retrofit.create(ConsultationApi.class);
 
@@ -194,15 +212,16 @@ public class MyInfoFragment extends Fragment {
         SharedPreferences sp = getActivity().getSharedPreferences(Config.PREFERENCE_NAME, MODE_PRIVATE);
         String accessToken = "Bearer " + sp.getString(Config.ACCESS_TOKEN, "");
 
-        Call<UserHistoryList> call = api.getMyConsultation(accessToken);
+        Call<UserHistoryList> call = api.getMyConsultation(accessToken,offset,limit);
         call.enqueue(new Callback<UserHistoryList>() {
             @Override
             public void onResponse(Call<UserHistoryList> call, Response<UserHistoryList> response) {
                 if(response.isSuccessful()){
-                    consultationList.clear();
+
                     consultationList.addAll(response.body().getResult());
 
                     adapter = new MyConsultationAdapter(getActivity(),consultationList);
+                    recyclerView.setAdapter(adapter);
 
                     adapter.setOnItemClickListener(new MyConsultationAdapter.OnItemClickListener() {
                         @Override
@@ -218,8 +237,7 @@ public class MyInfoFragment extends Fragment {
                             MyInfoFragment.this.deleteProcess(index);
                         }
                     });
-
-                    recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
 
 
                 }else{
